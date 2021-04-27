@@ -1,0 +1,13 @@
+steps:
+        # copy files from cloud bucket
+      - name: 'gcr.io/cloud-builders/gsutil'
+        args: ['cp','-r','gs://test-proj-0026-bucket-name/joinWeb_DB', './public/']
+        # Install
+      - name: 'gcr.io/cloud-builders/npm'
+        args: ['install']
+        # Build
+      - name: 'gcr.io/cloud-builders/npm'
+        args: ['run', 'build']
+        # Deploy
+      - name: gcr.io/test-proj-0026/firebase
+        args: ['deploy', '--project=test-proj-0026', '--only=hosting']

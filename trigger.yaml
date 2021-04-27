@@ -1,0 +1,9 @@
+createTime: '2021-04-15T15:47:25.950579241Z'
+filename: cloudbuild.yaml
+id: b1a0543f-8c82-4531-b929-7ed69100a988
+name: build-trigger
+triggerTemplate:
+  branchName: ^master$
+  projectId: test-proj-0024
+  repoName: test-repo-0024
+disabled: True
